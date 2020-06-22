@@ -7,7 +7,6 @@ on:
     branches: [ master ]
 jobs:
   build:
-    name: log_artifact
 steps:
     - uses: actions/checkout@v2
     - run: sh executeForLogs.sh
