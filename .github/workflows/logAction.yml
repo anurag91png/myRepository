@@ -5,9 +5,14 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+
+
 jobs:
   build:
-steps:
+
+    runs-on: ubuntu-latest
+
+    steps:
     - uses: actions/checkout@v2
     - run: sh executeForLogs.sh
     - uses: actions/upload-artifact@v2
