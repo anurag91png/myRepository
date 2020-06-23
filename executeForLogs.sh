@@ -1,3 +1,3 @@
 #git log --oneline --decorate > log.log
-ls -l
-git log --oneline
+ls -l  > log.log
+git log --oneline  > log.log
