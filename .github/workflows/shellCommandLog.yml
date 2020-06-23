@@ -1,16 +1,14 @@
 name: run shell command
-on: [ push ]
-
+on: [ push]
 jobs:
-  upload artifact:
+  list all files:
     runs-on: ubuntu-latest
-    -name: directory
-    run: pwd
-  -name: list of files    
-  run: ls -l
--name: uploading artifact
-uses: actions/upload-artifact@v1
- with:
-     -name: myLog
-      path: ./log.log
-    
+    steps:
+      - name: checkout
+      - uses: actions/checkout@v2
+      - name: list all files
+      - run: ls -l
+      - uses: actions/upload-artifact@v2
+        with:
+          name : logFile
+          path : ./log.log       
