@@ -1,0 +1,16 @@
+name: run shell command
+on: [ push ]
+
+jobs:
+  upload artifact:
+    runs-on: ubuntu-latest
+    -name: directory
+    run: pwd
+  -name: list of files    
+  run: ls -l
+-name: uploading artifact
+uses: actions/upload-artifact@v1
+ with:
+     -name: myLog
+      path: ./log.log
+    
