@@ -1,14 +1,21 @@
-name: run shell command
-on: [ push]
+name: log artifact
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
 jobs:
-  list all files:
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: checkout
-      - uses: actions/checkout@v2
-      - name: list all files
-      - run: ls -l
-      - uses: actions/upload-artifact@v2
-        with:
-          name : logFile
-          path : ./log.log       
+    - uses: actions/checkout@v2
+    - run: git log --oneline --decorate > log.log
+    - uses: actions/upload-artifact@v2
+      with:
+        name: log_artifact
+        path: ./log.log
