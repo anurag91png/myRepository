@@ -18,4 +18,6 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: log_artifact
-        path: ./log.log
+        path: |
+          ./log.log
+          ./log1.log
