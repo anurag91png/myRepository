@@ -1,3 +1,3 @@
-#git log --oneline --decorate > log.log
+#git log --oneline --decgit log --oorate > log.log
 ls -ltr  > log.log
-git diff > log.log
+git log --pretty=format:"%h - %an, %ar : %s" > log1.log
