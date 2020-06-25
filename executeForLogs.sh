@@ -6,7 +6,4 @@
 #git diff HEAD >> log.log
 #git diff --cached >> log.log
 #$ find "*.txt" -type f -exec echo file {}; >> log.log
-for file in *
-do
-   echo $file > log.log
-done
+find . -name "*.txt" -print > log.log
