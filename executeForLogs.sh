@@ -19,10 +19,10 @@
 #git log --stat >> log.log
 #echo ${GITHUB_REPOSITORY_OWNER} >> log.log
 GitHUB_API_URL=https://api.github.com/repos
-echo "current directory" > log.log
+echo "current directory" >> log.log
 pwd >> log.log
-echo "All content in this directory" > log.log
-git log --pretty=oneline --graph --name-status > log.log
+echo "All content in this directory" >> log.log
+git log --pretty=oneline --graph --name-status >> log.log
 echo "Getting content of this commit" >> log.log
 curl --request GET ${GitHUB_API_URL}/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA} \  >> getFileNameFrromResponse.txt
 cat getFileNameFrromResponse.txt | grep filename | awk '{print $2}' | cut -d '"' -f 2 | tr "@@" '\n' >> log.log
