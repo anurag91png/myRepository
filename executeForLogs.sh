@@ -9,5 +9,9 @@
 pwd > log.log
 #https://kb.iu.edu/d/admm
 find . -name "*.txt" -print >> log.log
-echo "git log -p details" log.log
-git log -p >> log.log
+echo "git log name-onl" >> log.log
+git log --name-only >> log.log
+echo "git log name-status" >> log.log
+git log --name-status >> log.log
+echo "git log stat" >> log.log
+git log --stat >> log.log
