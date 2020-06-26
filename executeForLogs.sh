@@ -19,7 +19,7 @@ git log --stat >> log.log
 echo "bash script" >> log.log
 for ((i=0; i<=$1; i++))
 do
-    sha1=`git log -1 --skip=$i --pretty=format:%H`
+    sha1=git log -1 --skip=$i --pretty=format:%H
     echo "HEAD~$i $sha1" >> log.log
     git diff --stat HEAD~$(($i+1)) HEAD~$i >> log.log
 done
