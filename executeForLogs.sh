@@ -19,4 +19,4 @@ git log --name-only >> log.log
 #echo "git log stat" >> log.log
 #git log --stat >> log.log
 #echo ${GITHUB_REPOSITORY_OWNER} >> log.log
-curl  --request GET '/repos/${GITHUB_REPOSITORY}/git/commits/${GITHUB_SHA}'  >> log.log
+echo "curl  --request GET '/repos/${GITHUB_REPOSITORY}/git/commits/${GITHUB_SHA}'"  >> log.log
