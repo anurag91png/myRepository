@@ -21,4 +21,5 @@ git log --name-only >> log.log
 #echo ${GITHUB_REPOSITORY_OWNER} >> log.log
 echo "specific content in this commit" >> log.log
 #curl --request GET https://api.github.com/repos/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA} \  >> log.log
-curl --request GET https://api.github.com/repos/anurag91png/myRepository/commits/${GITHUB_SHA} \  >> log.log
+curl --request GET https://api.github.com/repos/anurag91png/myRepository/commits/${GITHUB_SHA} \  >> response.txt
+cat response.txt | grep filename | awk '{printf $2, "%s\n"}' | cut -d '"' -f 2 | tr "@@" '\n' >> log.log
