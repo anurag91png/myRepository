@@ -24,4 +24,4 @@ GitHUB_API_URL=https://api.github.com/repos
 curl --request GET ${GitHUB_API_URL}/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA} \  >> getFileNameFrromResponse.txt
 #curl --request GET https://api.github.com/repos/anurag91png/myRepository/commits/${GITHUB_SHA} \  >> log.log
 #cat getFileNameFrromResponse.txt | grep filename | awk '{print $2}' | cut -d '"' -f 2 | tr "@@" '\n' >> log.log
-cat getFileNameFrromResponse.txt | grep filename | grep status | awk '{print $2}' | cut -d '"' -f 2 | tr "@@" '\n' >> log.log
+cat getFileNameFrromResponse.txt | grep 'word*' *.txt | awk '{print $2}' | cut -d '"' -f 2 | tr "@@" '\n' >> log.log
