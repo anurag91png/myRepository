@@ -6,6 +6,8 @@
 #git diff HEAD >> log.log
 #git diff --cached >> log.log
 #$ find "*.txt" -type f -exec echo file {}; >> log.log
+pwd > log.log
 #https://kb.iu.edu/d/admm
-find . -name "*.txt" -print > log.log
-pwd >> log.log
+find . -name "*.txt" -print >> log.log
+echo "git log -p details" log.log
+git log -p >> log.log
