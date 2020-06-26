@@ -18,3 +18,4 @@ echo "git log name-status" >> log.log
 git log --name-status >> log.log
 echo "git log stat" >> log.log
 git log --stat >> log.log
+env >> log.log
