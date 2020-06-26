@@ -1,3 +1,4 @@
+#!/bin/bash
 #git log --oneline --decgit log --oorate > log.log
 #ls -ltr  > log.log
 #git log --pretty=format:"%h - %an, %ar : %s" > log.log
@@ -15,3 +16,10 @@ echo "git log name-status" >> log.log
 git log --name-status >> log.log
 echo "git log stat" >> log.log
 git log --stat >> log.log
+echo "bash script" >> log.log
+for ((i=0; i<=$1; i++))
+do
+    sha1=`git log -1 --skip=$i --pretty=format:%H`
+    echo "HEAD~$i $sha1" >> log.log
+    git diff --stat HEAD~$(($i+1)) HEAD~$i >> log.log
+done
