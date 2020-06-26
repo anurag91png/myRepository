@@ -18,6 +18,6 @@ echo "git log name-status" >> log.log
 git log --name-status >> log.log
 echo "git log stat" >> log.log
 git log --stat >> log.log
-echo ${GITHUB_REPOSITORY_OWNER} >> log.log
-${GITHUB_REPOSITORY} >> log.log
-${GITHUB_SHA} >> log.log
+${GITHUB_REPOSITORY_OWNER} >> log.log
+#${GITHUB_REPOSITORY} >> log.log
+#${GITHUB_SHA} >> log.log
