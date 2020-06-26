@@ -7,19 +7,14 @@
 #git diff HEAD >> log.log
 #git diff --cached >> log.log
 #$ find "*.txt" -type f -exec echo file {}; >> log.log
-pwd > log.log
+git log --pretty=oneline --graph --name-status > log.log
+echo "current directory" >> log.log
+pwd >> log.log
 #https://kb.iu.edu/d/admm
 find . -name "*.txt" -print >> log.log
-echo "git log name-onl" >> log.log
+echo "git log name-only " >> log.log
 git log --name-only >> log.log
 echo "git log name-status" >> log.log
 git log --name-status >> log.log
 echo "git log stat" >> log.log
 git log --stat >> log.log
-echo "bash script" >> log.log
-for ((i=0; i<=$1; i++))
-do
-    sha1=git log -1 --skip=$i --pretty=format:%H
-    echo "HEAD~$i $sha1" >> log.log
-    git diff --stat HEAD~$(($i+1)) HEAD~$i >> log.log
-done
