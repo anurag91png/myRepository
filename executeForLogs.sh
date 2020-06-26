@@ -20,6 +20,7 @@ git log --name-only >> log.log
 #git log --stat >> log.log
 #echo ${GITHUB_REPOSITORY_OWNER} >> log.log
 echo "specific content in this commit" >> log.log
-curl --request GET https://api.github.com/repos/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA} \  >> getFileName.txt
+GitHUB_API_URL=https://api.github.com/repos
+curl --request GET ${GitHUB_API_URL}/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA} \  >> getFileNameFrromResponse.txt
 #curl --request GET https://api.github.com/repos/anurag91png/myRepository/commits/${GITHUB_SHA} \  >> log.log
-cat getFileName.txt | grep filename | awk '{printf $2, "%s\n"}' | cut -d '"' -f 2 | tr "@@" '\n' >> log.log
+cat getFileNameFrromResponse.txt | grep filename | awk '{printf $2, "%s\n"}' | cut -d '"' -f 2 | tr "@@" '\n' >> log.log
