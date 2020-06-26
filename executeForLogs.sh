@@ -21,3 +21,4 @@ git log --stat >> log.log
 GITHUB_REPOSITORY_OWNER >> log.log
 GITHUB_REPOSITORY >> log.log
 GITHUB_SHA >> log.log
+echo "change" >>log.log
