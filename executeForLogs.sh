@@ -19,5 +19,5 @@ git log --name-only >> log.log
 #echo "git log stat" >> log.log
 #git log --stat >> log.log
 #echo ${GITHUB_REPOSITORY_OWNER} >> log.log
-echo "specific content in this commit"
-curl  --request GET 'https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA'  >> log.log
+echo "specific content in this commit" >> log.log
+curl  --request GET 'https://api.github.com/repos/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA}'  >> log.log
